@@ -7,7 +7,7 @@ var c = $('.homeBg')[0],
     img2 = new Image(),
     nCubes = 0,
     cubes = [],
-    Cube = function(index, _x, _y, _s){ //console.log(_x,_y)
+    Cube = function(index, _x, _y, _s){
       this.img = img;
       this.img2 = img2;
       this.scale = _s;
@@ -15,11 +15,7 @@ var c = $('.homeBg')[0],
       this.y = _y;
       this.z = this.img2_opacity = 0;
 
-    //   ctx.globalCompositeOperation = 'destination-under'
-    //   ctx.fillStyle = "orange";
-    //   ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      this.draw = function(){
+      this.draw = () => {
         ctx.translate(this.x, this.y + this.z);
         ctx.drawImage(this.img, -100 / 2 * this.scale, -200 / 2 * this.scale, 100 * this.scale, 200 * this.scale);
         ctx.globalAlpha = this.img2_opacity;
@@ -31,35 +27,33 @@ var c = $('.homeBg')[0],
       
     };
 
-img.src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAADIBAMAAADsElnyAAAAJFBMVEVHcEw+Pj5aWloQEBAZGRleXl6AgIDAwMBwcHCampq7u7tzc3M0sGdFAAAABXRSTlMAp/UwQ5FLsO8AAADxSURBVHgB7c9HcQRhDITRn8NgMABDWAjO6ewMYLgsWef8akelk1Pr/upTj023mkZxiK3dqSsODnpmdXBwUBlEaRCYckdtEKVBYModmKbQKDrGHZpaaPyqZxQaRc8oNPVyTaehUVRGURhFYerlmu2D5k3jqimO1+MCU4h5XFzc9sQjaXTO1vMTobMkXgmdBfFKNnTY8UroLIp3YkfxldBhB4QOAkIHAaHDDggdBIQOX0HoICB0EBA6CAgdlkPoICB0+ApCBwGhw1cQOggIBgHh5pCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQH0XuAS5hV4q0a3iHAAAAAElFTkSuQmCC';
-
-img2.src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAADIBAMAAADsElnyAAAAJFBMVEVHcEylpaXv7+/Gxsa+vr7m5uahoaE/Pz9/f3+Ojo5lZWWCgoKkaSxxAAAABnRSTlMA9TCcskPTdr2ZAAAA40lEQVR4Ae3POW0EQQBE0UZhBEawWBaAzz0QDIVhYgxmZ3X6pFZpIl/18xf8sep8GinFwzMmi8sFk8TlctFkockiGz80WWiyyMYPTRbZKLLxIxtFMIoVwCCSUQSTRDaeZ3POAKPIRpGNIhvPs3m8HOw0Pg+K+8fYo0FsY48GMUkyiEmSQUySDGKSZBCTJIOYZG0QkIVBQDQKydogIBqFRKOQaBSQYBAQDAKCQQSCUUg0CAhmLSAYhUSDgCwMIpFpFJnsW0lJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUnJjyJfg4PNmR1hT+AAAAAASUVORK5CYII=';
+img.src='../assets/image1_black.png';
+img2.src='../assets/image2_black.png';
 
 img.onload = window.onresize = setGrid;
 
-function setGrid(){ //console.log('set grid')
+function setGrid(){
   c.width = window.innerWidth;
   c.height = window.innerHeight;
   cw = Math.ceil(c.width/100+1);
   ch = Math.floor(c.height/25+10);
-  c.fillStyle = (20, 20, 150, 100)
 
   cubes = [];
   
   for (var i=_y=0; _y<ch; _y++) {
-    for (var _x=0; _x<cw; _x++) { //console.log(_y%2==0)
+    for (var _x=0; _x<cw; _x++) {
       if (_y%2==0) cubes.push( new Cube(i, -25+_x*100, -75+_y*25, 0.9) );
       else cubes.push( new Cube(i, 25+_x*100, -75+_y*25, 0.9) );
       i++;
     }
   }
 
-  nCubes = cubes.length; //console.log(nCubes)
+  nCubes = cubes.length;
 }
 
 var staggerAnim;
 function anim() {
-  staggerAnim = gsap.timeline({ onComplete: anim })
+  staggerAnim = gsap.timeline({ onComplete: randImg })
                     .add(staggerFrom(gsap.utils.random(0,nCubes,1)))
 };
 
@@ -75,7 +69,7 @@ function staggerFrom(from) {
         grid: [ch, cw],
         overwrite: 'auto',
         from: from,        
-        onComplete: function() { // Like reverse: 1 but make sure to reach a z of 0
+        onComplete: function() {
           gsap.to(this.targets(), {
             duration: 1,
             z: 0,
@@ -104,21 +98,44 @@ function staggerFrom(from) {
 }
 gsap.delayedCall(0.2, anim);
 
-gsap.ticker.add(()=>{ //update on each tick
-  ctx.clearRect(0,0,c.width,c.height);
+function randImg(){
+  gsap.to('.homeBg', {duration:1, onComplete:function(){
+  img.onload = function(){
+    gsap.delayedCall(0.2, anim);
+  }
+  switch(Math.floor(Math.random() * 6)){
+    case 0:
+      img.src='../assets/image1_white.png';
+      img2.src='../assets/image2_white.png';
+      break;
+    case 1:
+      img.src='../assets/image1_black.png';
+      img2.src='../assets/image2_black.png';
+      break;
+    case 2:
+      img.src='../assets/image1_blue.png';
+      img2.src='../assets/image2_blue.png';
+      break;
+    case 3:
+      img.src='../assets/image1_orange.png';
+      img2.src='../assets/image2_orange.png';
+      break;
+    case 4:
+      img.src='../assets/image1_green.png';
+      img2.src='../assets/image2_green.png';
+      break;
+    case 5:
+      img.src='../assets/image1_purple.png';
+      img2.src='../assets/image2_purple.png';
+      break;
+  }
+}});
+}
 
-  ctx.save();
-  ctx.globalCompositeOperation='source-over';
-  ctx.fillStyle = "orange";
-  ctx.fillRect(0, 0, window.width, window.height);
-  ctx.restore();
-
+gsap.ticker.add(()=>{
+  // ctx.clearRect(0,0,c.width,c.height);
   ctx.globalCompositeOperation='source-over';
   for (var i=0; i<nCubes; i++) cubes[i].draw();
-
-  hue-=0.5;
   ctx.globalCompositeOperation='lighter';
-//   ctx.fillStyle = 'hsl('+hue+', 75%, 25%)';
-  ctx.fillRect(0, 0, c.width, c.height);
-
+  // ctx.fillRect(0, 0, c.width, c.height);
 });
