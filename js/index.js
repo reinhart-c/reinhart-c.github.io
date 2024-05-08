@@ -27,8 +27,17 @@ var c = $('.homeBg')[0],
       
     };
 
-img.src='../assets/image1_black.png';
-img2.src='../assets/image2_black.png';
+const buffer = document.createElement('canvas');
+const btx = buffer.getContext('2d');
+btx.fillStyle = '#000000'
+btx.fillRect(0, 0, window.width, window.height);
+btx.globalAlpha = 1;
+btx.globalCompositeOperation = 'destination-in';
+ctx.drawImage(buffer, 0, 0);
+
+
+img.src='../assets/image1.png';
+      img2.src='../assets/image2.png';
 
 img.onload = window.onresize = setGrid;
 
@@ -53,7 +62,7 @@ function setGrid(){
 
 var staggerAnim;
 function anim() {
-  staggerAnim = gsap.timeline({ onComplete: randImg })
+  staggerAnim = gsap.timeline({ onComplete: anim })
                     .add(staggerFrom(gsap.utils.random(0,nCubes,1)))
 };
 
@@ -98,44 +107,8 @@ function staggerFrom(from) {
 }
 gsap.delayedCall(0.2, anim);
 
-function randImg(){
-  gsap.to('.homeBg', {duration:1, onComplete:function(){
-  img.onload = function(){
-    gsap.delayedCall(0.2, anim);
-  }
-  switch(Math.floor(Math.random() * 6)){
-    case 0:
-      img.src='../assets/image1_white.png';
-      img2.src='../assets/image2_white.png';
-      break;
-    case 1:
-      img.src='../assets/image1_black.png';
-      img2.src='../assets/image2_black.png';
-      break;
-    case 2:
-      img.src='../assets/image1_blue.png';
-      img2.src='../assets/image2_blue.png';
-      break;
-    case 3:
-      img.src='../assets/image1_orange.png';
-      img2.src='../assets/image2_orange.png';
-      break;
-    case 4:
-      img.src='../assets/image1_green.png';
-      img2.src='../assets/image2_green.png';
-      break;
-    case 5:
-      img.src='../assets/image1_purple.png';
-      img2.src='../assets/image2_purple.png';
-      break;
-  }
-}});
-}
-
 gsap.ticker.add(()=>{
-  // ctx.clearRect(0,0,c.width,c.height);
   ctx.globalCompositeOperation='source-over';
   for (var i=0; i<nCubes; i++) cubes[i].draw();
   ctx.globalCompositeOperation='lighter';
-  // ctx.fillRect(0, 0, c.width, c.height);
 });

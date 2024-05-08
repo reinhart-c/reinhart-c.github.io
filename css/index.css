@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Noto+Serif);
+@import "compass/css3";
 
 * {
     margin: 0;
@@ -7,8 +8,133 @@
 }
 
 .homeBg {
-    /* background-color: aqua; */
+    position: fixed;
     top: 0;
     left: 0;
     overflow: hidden;
+    height: 100%;
+    width: 100%;
+    display:block;
+}
+
+.tint {
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    display:block;
+    background-color: #000000;
+    opacity: 75%;
+}
+
+.intro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    display:flex;
+    color: #ffffff;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro p{
+    font-family: 'Noto Serif', sans-serif;
+    font-size: 7vw;
+}
+
+.intro p::after{
+    content:attr('Reinhart Christopher');
+    /* position:absolute; */
+    /* left:2px; */
+    text-shadow:-1px 0 red;
+    /* top:0; */
+    /* color:white;
+    background:black;
+    overflow:hidden; */
+    clip:rect(0,900px,0,0); 
+    animation:noise-anim 2s infinite linear alternate-reverse;
+}
+
+.intro p::before{
+    content:attr('Reinhart Christopher');
+    /* position:absolute;
+    left:-2px; */
+    text-shadow:1px 0 blue; 
+    /* top:0;
+    color:white;
+    background:black; */
+    /* overflow:hidden; */
+    clip:rect(0,900px,0,0); 
+    animation:noise-anim-2 3s infinite linear alternate-reverse;
+}
+
+@keyframes noise-anim {
+    0% {
+        clip: rect(84px, 9999px, 51px, 0);
+   }
+    5% {
+        clip: rect(51px, 9999px, 94px, 0);
+   }
+    10% {
+        clip: rect(36px, 9999px, 4px, 0);
+   }
+    15% {
+        clip: rect(22px, 9999px, 12px, 0);
+   }
+    20% {
+        clip: rect(37px, 9999px, 57px, 0);
+   }
+    25% {
+        clip: rect(75px, 9999px, 97px, 0);
+   }
+    30% {
+        clip: rect(74px, 9999px, 90px, 0);
+   }
+    35% {
+        clip: rect(85px, 9999px, 31px, 0);
+   }
+    40% {
+        clip: rect(66px, 9999px, 14px, 0);
+   }
+    45% {
+        clip: rect(71px, 9999px, 48px, 0);
+   }
+    50% {
+        clip: rect(85px, 9999px, 83px, 0);
+   }
+    55% {
+        clip: rect(91px, 9999px, 58px, 0);
+   }
+    60% {
+        clip: rect(15px, 9999px, 48px, 0);
+   }
+    65% {
+        clip: rect(10px, 9999px, 53px, 0);
+   }
+    70% {
+        clip: rect(40px, 9999px, 50px, 0);
+   }
+    75% {
+        clip: rect(94px, 9999px, 13px, 0);
+   }
+    80% {
+        clip: rect(32px, 9999px, 78px, 0);
+   }
+    85% {
+        clip: rect(77px, 9999px, 63px, 0);
+   }
+    90% {
+        clip: rect(35px, 9999px, 31px, 0);
+   }
+    95% {
+        clip: rect(42px, 9999px, 7px, 0);
+   }
+    100% {
+        clip: rect(17px, 9999px, 72px, 0);
+   }
 }
