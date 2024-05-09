@@ -112,3 +112,10 @@ gsap.ticker.add(()=>{
   for (var i=0; i<nCubes; i++) cubes[i].draw();
   ctx.globalCompositeOperation='lighter';
 });
+
+
+
+var menu = document.querySelector('.menu')
+var menuButtonOnClick = () => {
+  menu.classList.toggle('menuActive')
+}
