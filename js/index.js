@@ -113,4 +113,10 @@ gsap.ticker.add(()=>{
   ctx.globalCompositeOperation='lighter';
 });
 
-// TODO : add scramble text effect
+const el = document.querySelector('#name');
+const fx = new TextScramble(el);
+fx.setText("REINHART CHRISTOPHER").then(() => {
+  const el2 = document.querySelector('#desc');
+  const fx2 = new TextScramble(el2);
+  fx2.setText("Sophomore computer science student with the focus area of AI.");
+});

@@ -1,0 +1,50 @@
+body {
+    background-color: #2a2a2a;
+}
+
+.title {
+    position: relative;
+    display: block;
+    text-align: center;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    color: #ffffff;
+}
+
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    margin: 25% 10% 25% 10%;
+    /* padding: 40px 70px 40px 70px; */
+    background-color: #161616;
+}
+
+.contactItem {
+    margin-top: 2%;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #005174;
+    font-size: 14px;
+    outline: none;
+    transition: border-color .2s;
+}
+
+.contactItem::placeholder{
+    color: #666;
+}
+
+.contactItem:focus {
+    border-bottom-color: #ddd;
+}
+
+.sendButton {
+    margin-top: 2%;
+    text-align: right;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 14px;
+    outline: none;
+}
