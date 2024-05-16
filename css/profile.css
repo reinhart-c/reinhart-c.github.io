@@ -1,0 +1,79 @@
+body {
+    background-color: #2a2a2a;
+}
+
+.title {
+    position: relative;
+    display: block;
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    color: #ffffff;
+    font-size: 2em;
+}
+
+.aboutMe {
+    display: flex;
+    flex-direction: row;
+}
+
+.aboutMe img {
+    margin-left: 8%;
+    padding-right: 2%;
+    width: 40vw;
+    height: 40vh;
+}
+
+.aboutMeDesc {
+    font-size: 1.3em;
+    padding: 2%;
+    margin-right: 8%;
+    width: 40%;
+    color: #ffffff;
+    border-left: 4px solid #ffffff;
+}
+
+.skillTools {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.skillTools p {
+    position: relative;
+    display: block;
+    text-align: center;
+    color: #ffffff;
+    font-size: 1.5em;
+}
+
+.skillToolsItem {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.skillToolsItem img{
+    height: 2em;
+    width: 2em;
+    margin: 1em;
+    padding: 10px;
+    border: 1px solid #ffffff;
+    transition: all 0.2s ease-in-out;
+}
+
+.skillToolsItem img:hover {
+    transform: scale(1.2);
+}
+
+#cursorText {
+    position: absolute;
+    color: #000000;
+    background-color: #ffffff;
+}

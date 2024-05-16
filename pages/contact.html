@@ -13,13 +13,30 @@
       <div class="title">
         <p id="contact" data-text="CONTACT">XXXXXXX</p>
       </div>
-      <div>
-        <form class="contactForm" action="mailto:reinhart.chr@gmail" method="post" enctype="text/plain">
-          <input class="contactItem contactName" type="text" name="name" placeholder="Name">
-          <input class="contactItem contactEmail" type="email" name="email" placeholder="Email">
-          <input class="contactItem contactMessage" type="text" name="message" placeholder="Message">
+      <div class="contactWrapper">
+        <form class="contactForm" action="mailto:reinhart.chr@gmail?subject=Contact%20From%20Portfolio" method="post" enctype="text/plain">
+          <label for="name" class="contactLabel">Name *</label>
+          <input class="contactItem contactName" type="text" name="name" placeholder="" required>
+          <label for="email" class="contactLabel">Email *</label>
+          <input class="contactItem contactEmail" type="email" name="email" placeholder="" required>
+          <label for="message" class="contactLabel">Message *</label>
+          <textarea rows="5" class="contactItem contactMessage" type="text" name="message" placeholder="" required></textarea>
           <button class="sendButton">Send</button>
         </form>
+      </div>
+      <div class="socialMedia">
+        <ul>
+          <li class="socialMediaItems">
+            <a href="https://www.linkedin.com/in/reinhart-c/">
+              <img src="../assets/LinkedIn.svg" alt="LinkedIn">
+            </a>
+          </li>
+          <li class="socialMediaItems">
+            <a href="https://github.com/reinhart-c">
+              <img src="../assets/GitHub.svg" alt="GitHub">
+            </a>
+          </li>
+        </ul>
       </div>
       <div>
       <button class="menuButton" onclick=menuButtonOnClick()>
