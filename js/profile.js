@@ -13,8 +13,8 @@ document.body.appendChild(curTxt);
 img.forEach(function(img){
     img.addEventListener('mouseover', function() {
         img.addEventListener('mousemove', function(e) {
-            curTxt.style.left=(e.pageX+20)+'px';
-            curTxt.style.top=e.pageY+'px';
+            curTxt.style.left=(e.pageX+30)+'px';
+            curTxt.style.top=(e.pageY)+'px';
             curTxt.innerHTML=img.alt;
         });
       });
