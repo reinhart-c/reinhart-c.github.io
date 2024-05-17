@@ -1,0 +1,79 @@
+body {
+    overflow-x: hidden;
+}
+
+.title {
+    position: fixed;
+    left: calc(50vw - 75px);
+}
+
+.carrousel {
+    width: 400%;
+    height: 100vh;
+    display: flex;
+    padding: 0;
+    overflow: hidden;
+}
+
+.projectItem {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* text-align: center; */
+    padding-top: 25vh;
+    color: #ffffff;
+    /* justify-content: center; */
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.projectItem img {
+    width: 50vw;
+}
+
+.projectItemDetail {
+    padding-left: 10px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.projectItemDetailTitle {
+    font-size: 1.5em;
+}
+
+.projectItemDetailDesc {
+    
+}
+
+.moreDetailButton {
+    text-decoration: none;
+}
+
+.moreDetailButton p {
+    color: #ffffff;
+    transition: 0.5s;
+}
+
+.moreDetailButton svg {
+    /* position: absolute; */
+    top: 0.45em;
+    right: 0.5em;
+    fill: #ffffff;
+    transition: 0.5s;
+    transform: translate(50px, -20px);
+    opacity: 0;
+}
+
+.moreDetailButton:hover p {
+    left: 0.5em;
+}
+
+.moreDetailButton:hover svg {
+    transform: translate(105px, -20px);
+    opacity: 1;
+
+}
