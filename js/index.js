@@ -118,5 +118,5 @@ const fx = new TextScramble(el);
 fx.setText("REINHART CHRISTOPHER").then(() => {
   const el2 = document.querySelector('#desc');
   const fx2 = new TextScramble(el2);
-  fx2.setText("Sophomore computer science student with the focus area of AI.");
+  fx2.setText("Junior computer science student with the focus area of AI.");
 });
