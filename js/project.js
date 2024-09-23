@@ -9,12 +9,14 @@ let panels = gsap.utils.toArray(".projectItem");
 let scrollFunc = ScrollTrigger.getScrollFunc(window);
 var resp = window.matchMedia("(max-width: 480px)");
 if(resp.matches){
+	console.log(panels[0].innerHeight);
 	tween = gsap.to(panels, {
 		yPercent: -100 * ( panels.length - 1 ),
 		ease: "none",
 		scrollTrigger: {
 			trigger: ".carrousel",
 			pin: true,
+			pinSpacing: false,
 			start: "top top",
 			scrub: 1,
 			anticipatePin: 1,
@@ -23,8 +25,7 @@ if(resp.matches){
 				inertia: false,
 				duration: {min: 0.1, max: 0.1}
 			},
-			// end: () =>  "+=" + (carrousel.offsetHeight - innerHeight)
-			end: () =>  "+=" + (innerHeight)
+			end: () =>  "+=" + (carrousel.offsetHeight - innerHeight)
 		}
 	});
 }else{
