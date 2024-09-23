@@ -2,6 +2,7 @@ body {
     overflow-x: hidden;
 }
 
+
 .title {
     position: fixed;
     left: calc(50vw - 75px);
@@ -17,7 +18,8 @@ body {
 
 @media only screen and (max-width: 480px) {
     .carrousel {
-        height: 300%;
+        height: 400%;
+        /* height: auto; */
         width: 100vw;
         flex-direction: column;
     }
@@ -41,7 +43,6 @@ body {
         flex-direction: column;
         padding-left: 0;
         padding-right: 0;
-        /* padding-top: 20vh; */
     }
 }
 
@@ -51,8 +52,7 @@ body {
 
 @media only screen and (max-width: 480px) {
     .projectItem img {
-        /* height: 50vh; */
-        width: 100vw;
+        height: 25vh;
     }
 }
 
@@ -66,7 +66,10 @@ body {
 @media only screen and (max-width: 480px) {
     .projectItemDetail {
         padding-top: 10px;
+        padding-right: 10px;
         align-items: center;
+        width: 100%;
+        height: auto;
     }
 }
 
@@ -78,6 +81,14 @@ body {
     margin-top: 60px;
     margin-bottom: 40px;
     flex-grow: 1;
+}
+
+@media only screen and (max-width: 480px) {
+    .projectItemDetailDesc {
+        margin-top: 30px;
+        margin-bottom: 20px;
+        width: 90%;
+    }
 }
 
 .moreDetailButton {
