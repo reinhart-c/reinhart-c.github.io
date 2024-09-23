@@ -23,7 +23,8 @@ if(resp.matches){
 				inertia: false,
 				duration: {min: 0.1, max: 0.1}
 			},
-			end: () =>  "+=" + (carrousel.offsetHeight - innerHeight)
+			// end: () =>  "+=" + (carrousel.offsetHeight - innerHeight)
+			end: () =>  "+=" + (innerHeight)
 		}
 	});
 }else{

@@ -19,7 +19,6 @@ body {
 @media only screen and (max-width: 480px) {
     .carrousel {
         height: 400%;
-        /* height: auto; */
         width: 100vw;
         flex-direction: column;
     }

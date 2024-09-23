@@ -3,11 +3,26 @@
     flex-direction: row;
 }
 
+@media only screen and (max-width: 480px) {
+    .aboutMe {
+        flex-direction: column;
+    }
+}
+
+
 .aboutMe img {
     margin-left: 8%;
     padding-right: 2%;
     width: 40vw;
     height: 40vh;
+}
+
+@media only screen and (max-width: 480px) {
+    .aboutMe img {
+        align-self: center;
+        margin: 0;
+        padding: 0;
+    }
 }
 
 .aboutMeDesc {
@@ -17,6 +32,15 @@
     width: 40%;
     color: #ffffff;
     border-left: 4px solid #ffffff;
+}
+
+@media only screen and (max-width: 480px) {
+    .aboutMeDesc {
+        width: 90%;
+        padding: 5%;
+        border: 0;
+        margin: 0;
+    }
 }
 
 .skillTools {
