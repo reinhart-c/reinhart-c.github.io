@@ -21,8 +21,6 @@ body {
         height: 400%;
         width: 100vw;
         flex-direction: column;
-        margin: 0;
-        border: 0;
     }
 }
 
