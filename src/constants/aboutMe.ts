@@ -1,0 +1,3 @@
+export const aboutMe = `Multidisciplinary developer with experience spanning web, mobile, AI, and design. With a year as a full-stack web developer and a current internship at Apple Developer Academy@BINUS, I bring both practical industry skills and a strong academic foundation as a senior Computer Science student specializing in AI.
+
+I enjoy building innovative, user-focused solutions that blend technical depth with creative design.`

@@ -1,9 +1,9 @@
-# My portfolio page
-Live page can be seen [here](https://reinhart-c.github.io/).
+# Portfolio Project
+A personal portfolio website showcasing my projects, skills, and experience. Designed for a clean, responsive, and accessible user experience.
 
+You can view the page [here](https://reinhart-c.github.io/)
 
-# Skills and Tools
-- HTML
-- CSS
-- JS
-- GSAP
+## Tech Skills
+- React.js
+- Typescript
+- Tailwind CSS
