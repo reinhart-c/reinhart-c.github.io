@@ -40,7 +40,7 @@ function Title() {
       <div className="text-center max-w-6xl">
         <div className="mb-12">
           <div className="relative">
-            <h1 className="text-6xl md:text-9xl font-bold mb-6 tracking-wider">
+            <h1 className="text-4xl md:text-7xl font-bold mb-6 tracking-wider">
               <span className="text-purple-400">{glitchText.split(' ')[0]}</span>
               <br />
               <span className="text-white">{glitchText.split(' ')[1]}</span>
@@ -48,14 +48,14 @@ function Title() {
           </div>
           <div className="h-16 flex items-center justify-center mb-8">
               <div className="text-center transition-all duration-1000 ease-in-out">
-                <div className="text-3xl md:text-4xl font-bold text-indigo-400 tracking-wider">
+                <div className="text-2xl md:text-4xl font-bold text-indigo-400 tracking-wider">
                   MULTIDICIPLINARY DEVELOPER
                 </div>
               </div>
             </div>
             <div className="h-16 flex items-center justify-center mb-8">
               <div className="text-center transition-all duration-1000 ease-in-out">
-                <div className="text-2xl md:text-3xl font-bold text-cyan-400 tracking-wider mb-2">
+                <div className="text-xl md:text-3xl font-bold text-cyan-400 tracking-wider mb-2">
                   {titles[currentTitleIndex].text}
                 </div>
                 <div className="text-purple-400 text-sm tracking-widest opacity-80">

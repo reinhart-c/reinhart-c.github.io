@@ -96,7 +96,9 @@ function Experience() {
         </div>
 
         <div className="relative">
-          {drawLine()}
+          <div className="hidden md:block">
+            {drawLine()}
+          </div>
           {/* Experience Cards */}
           <div className="flex flex-col space-y-20 relative z-10"
           ref={parentRef}>
